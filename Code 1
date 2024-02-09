@@ -1,0 +1,23 @@
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+url='https://webpages.charlotte.edu/mscipion/'
+repsonse = requests.get(url)
+
+soup = BeautifulSoup(response.test, 'html.parser')
+table = soup.find('table')
+students =[]
+languages =[]
+years_of_experience.append(int(cols[2].text.strip()))
+
+data = {
+    'Student': students,
+    'Computer Language': languages,
+    'Experience': years_of_experience 
+
+}
+df =pd.DataFrame(data)
+print(df)
+df.to_cvs('Students_data.cvs', index=False)
